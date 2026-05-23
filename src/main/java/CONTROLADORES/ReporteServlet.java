@@ -9,7 +9,6 @@ package CONTROLADORES;
  * @author agomz
  */
 import MODELO.Prestamo;
-import dao.PrestamoDAO;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -72,5 +71,15 @@ public class ReporteServlet extends HttpServlet {
 
         request.getRequestDispatcher("reportes.jsp")
                 .forward(request, response);
+    }
+
+    private static class PrestamoDAO {
+
+        public PrestamoDAO() {
+        }
+
+        private List<Prestamo> listar() {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
     }
 }

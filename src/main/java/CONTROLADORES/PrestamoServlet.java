@@ -12,7 +12,6 @@ import DAO.LibroDAO;
 
 import MODELO.Libro;
 import MODELO.Prestamo;
-import dao.PrestamoDAO;
 
 import java.io.IOException;
 
@@ -156,5 +155,19 @@ public class PrestamoServlet extends HttpServlet {
         }
 
         return 0;
+    }
+
+    private static class PrestamoDAO {
+
+        public PrestamoDAO() {
+        }
+
+        private void agregar(Prestamo prestamo) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        private Object listar() {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
     }
 }
