@@ -77,7 +77,7 @@ public class PrestamoServlet extends HttpServlet {
         if (libro.getDisponibilidad() <= 0) {
 
             response.sendRedirect(
-                    "prestamos.jsp?error=Libro no disponible"
+                    "Prestamos.jsp?error=Libro no disponible"
             );
 
             return;
@@ -116,7 +116,7 @@ public class PrestamoServlet extends HttpServlet {
                 prestamoDAO.listar()
         );
 
-        request.getRequestDispatcher("prestamos.jsp")
+        request.getRequestDispatcher("Prestamos.jsp")
                 .forward(request, response);
     }
 
@@ -136,7 +136,7 @@ public class PrestamoServlet extends HttpServlet {
                 LocalDate.now()
         );
 
-        request.getRequestDispatcher("ticket.jsp")
+        request.getRequestDispatcher("Ticket.jsp")
                 .forward(request, response);
     }
 
@@ -162,7 +162,7 @@ public class PrestamoServlet extends HttpServlet {
         public PrestamoDAO() {
         }
 
-        private void agregar(Prestamo prestamo) {
+        private void agregar(Prestamo Prestamo) {
             throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         }
 
