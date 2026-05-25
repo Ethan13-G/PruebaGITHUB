@@ -19,7 +19,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-public class UsuarioDAO {
+public class UsuarioDAOTEMP {
 
     private final ConexionDB conexion = new ConexionDB();
 
@@ -29,7 +29,7 @@ public class UsuarioDAO {
         String sql = "INSERT INTO Usuarios(nombre, apellido, correo, telefono, usuario, password) "
                 + "VALUES(?,?,?,?,?,?)";
 
-        try (Connection cn = conexion.getConnection();
+        try (Connection cn = conexion.conectar();
              PreparedStatement ps = cn.prepareStatement(sql)) {
 
             ps.setString(1, usuario.getNombre());
@@ -54,7 +54,7 @@ public class UsuarioDAO {
         ArrayList<Usuario> lista = new ArrayList<>();
         String sql = "SELECT * FROM Usuarios";
 
-        try (Connection cn = conexion.getConnection();
+        try (Connection cn = conexion.conectar();
              PreparedStatement ps = cn.prepareStatement(sql);
              ResultSet rs = ps.executeQuery()) {
 
@@ -85,7 +85,7 @@ public class UsuarioDAO {
         Usuario usuario = null; // Cambiado a null por defecto si no se encuentra
         String sql = "SELECT * FROM Usuarios WHERE usuario = ?";
 
-        try (Connection cn = conexion.getConnection();
+        try (Connection cn = conexion.conectar();
              PreparedStatement ps = cn.prepareStatement(sql)) {
 
             ps.setString(1, username);
@@ -115,7 +115,7 @@ public class UsuarioDAO {
 
         String sql = "SELECT * FROM Usuarios WHERE usuario = ? AND password = ?";
 
-        try (Connection cn = conexion.getConnection();
+        try (Connection cn = conexion.conectar();
              PreparedStatement ps = cn.prepareStatement(sql)) {
 
             ps.setString(1, username);
@@ -139,7 +139,7 @@ public class UsuarioDAO {
 
         String sql = "DELETE FROM Usuarios WHERE idUsuario = ?";
 
-        try (Connection cn = conexion.getConnection();
+        try (Connection cn = conexion.conectar();
              PreparedStatement ps = cn.prepareStatement(sql)) {
 
             ps.setInt(1, idUsuario);
