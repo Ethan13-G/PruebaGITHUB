@@ -4,48 +4,44 @@
  */
 package MODELO;
 
-/**
- *
- * @author agomz
- */
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class ConexionDB {
 
     private static final String URL =
-            "jdbc:sqlserver://localhost:1433;"
-            + "databaseName=BibliotecaPOO;" 
-            + "encrypt=true;"
-            + "trustServerCertificate=true;";
+            "jdbc:sqlserver://192.168.0.8;"
+            + "databaseName=BibliotecaPOO;"
+            + "encrypt=false;";
 
-    private static final String USER = "Prueba2"; 
-    private static final String PASSWORD = "123456789";
+    private static final String USER = "UsuarioLibreria";
+    private static final String PASSWORD = "Contra123";
 
-    // Método principal que llama tu lógica DAO
     public Connection conectar() {
+
         Connection conn = null;
+
         try {
-            // Cargar el driver oficial JDBC de Microsoft SQL Server
+
+            System.out.println("Cargando driver...");
+
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
-            // Crear la conexión pasando la URL, el usuario Prueba2 y su contraseña
-            conn = DriverManager.getConnection(URL, USER, PASSWORD);
-            System.out.println("¡Conexión exitosa a SQL Server (BibliotecaPOO) usando el usuario Prueba2!");
+            System.out.println("Driver cargado");
 
-        } catch (ClassNotFoundException e) {
-            System.out.println("Error: El driver JDBC de SQL Server no se encuentra en las librerías del proyecto.");
-            e.printStackTrace();
-        } catch (SQLException e) {
-            System.out.println("Error al conectar con SQL Server. Verifica que la contraseña de 'Prueba2' sea correcta o que el puerto 1433 esté habilitado.");
+            System.out.println("Intentando conexión...");
+
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+
+            System.out.println("CONEXION EXITOSA");
+
+        } catch (Exception e) {
+
+            System.out.println("ERROR REAL:");
+
             e.printStackTrace();
         }
+
         return conn;
-    }
-    
-    // Mantiene la compatibilidad total con tus métodos DAO existentes
-    public Connection getConnection() {
-        return conectar();
     }
 }

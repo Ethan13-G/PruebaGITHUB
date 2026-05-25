@@ -5,6 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@page import="java.sql.Connection"%>
+<%@page import="MODELO.ConexionDB"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +16,16 @@
 </head>
 <body>
 
+<%
+    ConexionDB conexion = new ConexionDB();
+    Connection cn = conexion.conectar();
+
+    if(cn != null){
+        out.println("<h2>Conexión exitosa con SQL Server</h2>");
+    }else{
+        out.println("<h2>Error de conexión</h2>");
+    }
+%>
 <h1>Sistema de Biblioteca</h1>
 
 <ul>
