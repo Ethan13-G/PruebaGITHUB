@@ -8,7 +8,7 @@ package CONTROLADORES;
  *
  * @author agomz
  */
-import DAO.LibroDAOTEMP;
+import DAO.LibroDAO;
 import MODELO.Libro;
 
 import java.io.IOException;
@@ -23,7 +23,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(name = "LibroServlet", urlPatterns = {"/LibroServlet"})
 public class LibroServlet extends HttpServlet {
 
-    LibroDAOTEMP dao = new LibroDAOTEMP();
+    LibroDAO dao = new LibroDAO();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

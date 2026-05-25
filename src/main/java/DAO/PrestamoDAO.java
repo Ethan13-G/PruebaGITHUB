@@ -20,7 +20,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PrestamoDAOTEMP {
+public class PrestamoDAO {
 
     private final ConexionDB conexion = new ConexionDB();
 
