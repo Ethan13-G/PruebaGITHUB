@@ -8,7 +8,7 @@ package CONTROLADORES;
  *
  * @author agomz
  */
-import DAO.LibroDAO;
+import DAO.LibroDAOTEMP;
 
 import MODELO.Libro;
 import MODELO.Prestamo;
@@ -28,7 +28,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class PrestamoServlet extends HttpServlet {
 
     PrestamoDAO prestamoDAO = new PrestamoDAO();
-    LibroDAO libroDAO = new LibroDAO();
+    LibroDAOTEMP libroDAO = new LibroDAOTEMP();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

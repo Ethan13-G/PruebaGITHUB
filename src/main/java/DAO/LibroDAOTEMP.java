@@ -19,7 +19,7 @@ import MODELO.Libro;
 import java.sql.SQLException;
 import java.util.List;
 
-public class LibroDAO {
+public class LibroDAOTEMP {
 
     ConexionDB conexion = new ConexionDB();
     Connection cn;

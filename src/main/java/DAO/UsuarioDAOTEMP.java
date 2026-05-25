@@ -19,7 +19,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-public class UsuarioDAO {
+public class UsuarioDAOTEMP {
 
     private final ConexionDB conexion = new ConexionDB();
 
