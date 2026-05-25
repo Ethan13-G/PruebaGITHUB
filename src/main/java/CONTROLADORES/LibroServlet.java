@@ -84,7 +84,7 @@ public class LibroServlet extends HttpServlet {
 
         request.setAttribute("listaLibros", lista);
 
-        request.getRequestDispatcher("Libros.jsp")
+        request.getRequestDispatcher("libros.jsp")
                 .forward(request, response);
     }
 
@@ -101,7 +101,7 @@ public class LibroServlet extends HttpServlet {
         );
 
         if (disponibilidad < 0) {
-            response.sendRedirect("Libros.jsp?error=Disponibilidad invalida");
+            response.sendRedirect("libros.jsp?error=Disponibilidad invalida");
             return;
         }
 
@@ -173,7 +173,7 @@ public class LibroServlet extends HttpServlet {
 
         request.setAttribute("listaLibros", lista);
 
-        request.getRequestDispatcher("Libros.jsp")
+        request.getRequestDispatcher("libros.jsp")
                 .forward(request, response);
     }
 }
